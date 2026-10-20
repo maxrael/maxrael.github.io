@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>History Of Guns — Archive Dossier | Max Rael</title>
+    <style>
+      :root {
+        --bg-color: #0c0d0e;
+        --panel-bg: #141618;
+        --text-color: #d1d5db;
+        --accent-color: #e5e7eb;
+        --subtle-text: #6b7280;
+        --border-color: #27272a;
+        --highlight: #a1a1aa;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.6;
+        padding: 2.5rem 1.5rem;
+        display: flex;
+        justify-content: center;
+      }
+
+      .container {
+        max-width: 820px;
+        width: 100%;
+      }
+
+      /* Responsive Logo Banner */
+      .brand-banner {
+        width: 100%;
+        margin-bottom: 1.5rem;
+        text-align: left;
+      }
+
+      .responsive-logo {
+        max-width: 100%; /* Never exceeds the screen width */
+        width: 420px; /* Sets a balanced max display size on desktop */
+        height: auto; /* Preserves original aspect ratio perfectly */
+        display: block;
+        margin: 0;
+      }
+
+      /* Accessible hidden header */
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+      }
+
+      /* Top Brand Navigation */
+      .site-header {
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 1.5rem;
+        margin-bottom: 2.5rem;
+      }
+
+      .site-title {
+        font-size: 0.9rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--subtle-text);
+        margin-bottom: 1rem;
+      }
+
+      .site-title a {
+        color: var(--subtle-text);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .site-title a:hover {
+        color: var(--accent-color);
+      }
+
+      /* Primary Matrix Navigation */
+      .matrix-nav {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        font-size: 0.95rem;
+        letter-spacing: 0.05em;
+      }
+
+      .matrix-nav a {
+        color: var(--subtle-text);
+        text-decoration: none;
+        padding-bottom: 0.25rem;
+        border-bottom: 2px solid transparent;
+        transition: all 0.2s ease;
+      }
+
+      .matrix-nav a:hover {
+        color: var(--accent-color);
+      }
+
+      .matrix-nav a.active {
+        color: var(--accent-color);
+        border-bottom-color: var(--accent-color);
+        font-weight: 500;
+      }
+
+      /* Section Header */
+      .dossier-intro {
+        margin-bottom: 3rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        color: var(--accent-color);
+        margin-bottom: 0.75rem;
+      }
+
+      .dossier-subtitle {
+        font-size: 1.05rem;
+        color: var(--highlight);
+        margin-bottom: 1.25rem;
+      }
+
+      .lead-text {
+        color: var(--text-color);
+        font-size: 0.95rem;
+        border-left: 2px solid var(--border-color);
+        padding-left: 1rem;
+        margin-top: 1rem;
+      }
+
+      /* Sub-navigation Filters */
+      .artifact-filters {
+        display: flex;
+        gap: 1rem;
+        margin: 2rem 0;
+        padding: 0.75rem 0;
+        border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+        font-size: 0.85rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .artifact-filters a {
+        color: var(--subtle-text);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .artifact-filters a:hover {
+        color: var(--accent-color);
+      }
+
+      /* Section Block */
+      .section-block {
+        margin-bottom: 3.5rem;
+      }
+
+      h2 {
+        font-size: 1.25rem;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        color: var(--accent-color);
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      /* Catalog / Discography Grid */
+      .release-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+
+      .release-card {
+        background-color: var(--panel-bg);
+        border: 1px solid var(--border-color);
+        padding: 1.25rem;
+        border-radius: 4px;
+      }
+
+      .release-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 0.5rem;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .release-title {
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: var(--accent-color);
+      }
+
+      .release-year {
+        font-size: 0.85rem;
+        color: var(--subtle-text);
+        font-family: monospace;
+      }
+
+      .release-meta {
+        font-size: 0.85rem;
+        color: var(--subtle-text);
+        margin-bottom: 0.75rem;
+      }
+
+      .release-desc {
+        font-size: 0.9rem;
+        color: var(--text-color);
+      }
+
+      .quote-block {
+        margin-top: 0.75rem;
+        font-size: 0.85rem;
+        font-style: italic;
+        color: var(--subtle-text);
+        border-left: 2px solid #3f3f46;
+        padding-left: 0.75rem;
+      }
+
+      /* Footer */
+      footer {
+        margin-top: 4rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border-color);
+        font-size: 0.8rem;
+        color: var(--subtle-text);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      footer a {
+        color: var(--subtle-text);
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        color: var(--accent-color);
+      }
+      /* Media Image Grid */
+      .image-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+        margin-top: 1.25rem;
+      }
+
+      .gallery-item {
+        background: #000;
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        filter: grayscale(100%) contrast(115%);
+        transition:
+          filter 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      .gallery-item:hover img {
+        filter: grayscale(40%) contrast(110%);
+        transform: scale(1.02);
+      }
+
+      .gallery-caption {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.8rem;
+        color: var(--subtle-text);
+        border-top: 1px solid var(--border-color);
+        background: var(--panel-bg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Site Header & Master Navigation -->
+      <header class="site-header">
+        <div class="site-title"><a href="/">Max Rael Archive</a></div>
+        <nav class="matrix-nav">
+          <a href="/historyofguns/" class="active">History Of Guns</a>
+          <a href="/maxrael/">Max Rael</a>
+          <a href="/decommissionedforests/">Decommissioned Forests</a>
+        </nav>
+      </header>
+
+      <!-- Main Dossier Heading -->
+      <main>
+        <section class="dossier-intro">
+          <div class="brand-banner">
+            <img
+              src="images/hog-logo.png"
+              alt="History Of Guns"
+              class="responsive-logo"
+            />
+          </div>
+          <h1 class="visually-hidden">History Of Guns</h1>
+          <p class="dossier-subtitle">
+            England's Finest Metamodernist Industrial Band
+          </p>
+          <p class="lead-text">
+            Characterised by a genre-blurring variety of styles and approaches
+            viewed through their singularly unique industrial lens, navigating
+            the tension between existential confrontation and an enduring core
+            of hope.
+          </p>
+        </section>
+
+        <!-- Artifact Filter Bar -->
+        <nav class="artifact-filters">
+          <a href="#discography">Core Releases</a>
+          <a href="#dossier">Dossier</a>
+          <a href="#media">Media</a>
+          <a href="#archives">External Links</a>
+        </nav>
+
+        <!-- Studio Releases Section -->
+        <section id="discography" class="section-block">
+          <h2>Core Releases</h2>
+          <div class="release-list">
+            <article class="release-card">
+              <div class="release-header">
+                <span class="release-title">Half Light</span>
+                <span class="release-year">2024</span>
+              </div>
+              <div class="release-meta">Liquid Len Recording Company</div>
+              <p class="release-desc">
+                Coming full circle, released on the summer solstice, June 20,
+                2024, a thematic and sonic sequel to their 2004 debut album,
+                Flashes of Light.
+              </p>
+              <div class="quote-block">
+                "...a collection of songs that sit on the interface between
+                dance and darkwave, clinical gothic vibes and futuristic
+                electronica, between the past and the future, the what was and
+                the what might yet be... ...it is an album full of digital tones
+                and analogue textures, smooth ambient electro-scapes, and
+                clubland grooves." — The Big Takeover
+              </div>
+            </article>
+
+            <article class="release-card">
+              <div class="release-header">
+                <span class="release-title">Forever Dying In Your Eyes</span>
+                <span class="release-year">2022</span>
+              </div>
+              <div class="release-meta">Liquid Len Recording Company</div>
+              <p class="release-desc">
+                The return after a decade hiatus. Polished, dramatic production
+                exploring existential confrontation, recovery, and persistence.
+              </p>
+            </article>
+
+            <article class="release-card">
+              <div class="release-header">
+                <span class="release-title">Album 4</span>
+                <span class="release-year">2012</span>
+              </div>
+              <div class="release-meta">Independent</div>
+              <p class="release-desc">
+                A polarizing document of disintegration; raw, abrasive, and
+                honest.
+              </p>
+            </article>
+
+            <article class="release-card">
+              <div class="release-header">
+                <span class="release-title">ACEDIA</span>
+                <span class="release-year">2008</span>
+              </div>
+              <div class="release-meta">Line Out Records</div>
+              <p class="release-desc">
+                Mid-tempo industrial malaise and existential dread. Mark of the
+                label transition.
+              </p>
+              <div class="quote-block">
+                "A brooding masterpiece of mid-tempo industrial malaise...
+                captures a specific kind of English existential dread." —
+                Terrorizer
+              </div>
+            </article>
+
+            <article class="release-card">
+              <div class="release-header">
+                <span class="release-title">Apophenia</span>
+                <span class="release-year">2006</span>
+              </div>
+              <div class="release-meta">Independent / Line Out Records</div>
+              <p class="release-desc">
+                Genre fragmentation featuring the defining anthem "Your Obedient
+                Servants".
+              </p>
+            </article>
+
+            <article class="release-card">
+              <div class="release-header">
+                <span class="release-title">Flashes of Light</span>
+                <span class="release-year">2004</span>
+              </div>
+              <div class="release-meta">The Liquid Lens Recording Company</div>
+              <p class="release-desc">
+                The noir-industrial debut LP defining the early UK Wasp Factory
+                and FuturePunk era.
+              </p>
+            </article>
+          </div>
+        </section>
+        <!-- Dossier: History, Narratives, Critical Lore -->
+        <section id="dossier" class="section-block">
+          <h2>The Dossier & World-Building</h2>
+
+          <!-- 1. Biography & Critical Reception -->
+          <article class="release-card" style="margin-bottom: 1.5rem">
+            <h3
+              style="
+                color: var(--accent-color);
+                font-size: 1.1rem;
+                margin-bottom: 0.5rem;
+              "
+            >
+              Origins & Metamodern Evolution
+            </h3>
+            <p class="release-desc">
+              History Of Guns emerged in Hertfordshire in 1996 when Max Rael and
+              Del Alien began improvising late-night studio sessions in the
+              dark. Becoming frontrunners of the UK Wasp Factory and FuturePunk
+              underground throughout the 2000s, the project has spanned formats
+              from raw duo electronica to a full 5-piece rock ensemble.
+            </p>
+            <div class="quote-block">
+              "By far, the most inventive UK band to have got their hands caught
+              in the industrial threshing machine." — Mick Mercer
+            </div>
+            <div class="quote-block" style="margin-top: 0.5rem">
+              "Exude a strong whiff of authenticity – a glowering psychosis that
+              no amount of Hot Topic eyeshadow can imitate." — Rock-Metal-Music
+              Reviews
+            </div>
+          </article>
+
+          <!-- 2. Half Light Lore -->
+          <article class="release-card" style="margin-bottom: 1.5rem">
+            <h3
+              style="
+                color: var(--accent-color);
+                font-size: 1.1rem;
+                margin-bottom: 0.5rem;
+              "
+            >
+              The Half Light Lore: Starship Pickton Lock
+            </h3>
+            <p class="release-desc">
+              The conceptual narrative of <em>Half Light</em> (2024) revolves
+              around the starship <em>Pickton Lock</em>, orbiting a dead planet
+              every 23 hours—trapped in a liminal transit between unbearable
+              searing light and absolute freezing dark. Mirroring the somatic
+              cycles of trauma and societal paralysis, the story frames time as
+              stuck in an endless loop, where escape toward
+              <em>Arcadia</em> requires quantum fractal jumps in odd time
+              signatures.
+            </p>
+          </article>
+
+          <!-- 3. Drug Castle Lore -->
+          <article class="release-card">
+            <h3
+              style="
+                color: var(--accent-color);
+                font-size: 1.1rem;
+                margin-bottom: 0.5rem;
+              "
+            >
+              The Lore of Drug Castle
+            </h3>
+            <p class="release-desc">
+              An insinuated reality explored across flash fiction, prose, and
+              experimental short films directed by Howard Gardner.
+              <em>Drug Castle</em> is an old coastal psychiatric facility where
+              bureaucratic and medical authorities explore the grotesque
+              boundaries of human survival through unreliable narrators, surreal
+              transformations, and clinical control.
+            </p>
+          </article>
+        </section>
+
+        <!-- Media Section -->
+        <section id="media" class="section-block">
+          <h2>Media & Video Artifacts</h2>
+          <div class="release-card">
+            <div class="release-header">
+              <span class="release-title"
+                >Interview: Charting the Higher Octave with DJ Nocturna</span
+              >
+              <span class="release-year">2024</span>
+            </div>
+            <p class="release-desc" style="margin-bottom: 1rem">
+              Del Alien and Max Rael explore the philosophical mechanics of
+              metamodernism, the creation of secondary worlds, and the balance
+              between concept and vocal performance.
+            </p>
+            <p>
+              <a
+                href="https://www.youtube.com/watch?v=d9YlDnWQgOo"
+                target="_blank"
+                style="color: var(--accent-color); text-decoration: underline"
+                >Watch on YouTube ↗</a
+              >
+            </p>
+          </div>
+        </section>
+
+        <!-- Links & External Archives -->
+        <section id="archives" class="section-block">
+          <h2>External Archives & Primary Sources</h2>
+          <div class="release-card">
+            <ul
+              style="
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 0.75rem;
+              "
+            >
+              <li>
+                <a
+                  href="https://historyofguns.bandcamp.com"
+                  target="_blank"
+                  style="color: var(--accent-color)"
+                  >Official Bandcamp Archive ↗</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://en.wikipedia.org/wiki/History_of_Guns"
+                  target="_blank"
+                  style="color: var(--accent-color)"
+                  >Wikipedia Reference Entry ↗</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/@historyofguns"
+                  target="_blank"
+                  style="color: var(--accent-color)"
+                  >YouTube Official Video Channel ↗</a
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer>
+        <span>&copy; Max Rael. Primary digital archive.</span>
+        <span><a href="/">← Return to Main Index</a></span>
+      </footer>
+    </div>
+  </body>
+</html>
