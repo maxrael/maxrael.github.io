@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>History Of Guns — Archive Dossier | Max Rael</title>
+    <title>History Of Guns — Official Homepage | Max Rael</title>
     <style>
       :root {
         --bg-color: #0c0d0e;
@@ -197,7 +197,61 @@
         padding: 1.25rem;
         border-radius: 4px;
       }
+      /* Release Card Layout with Thumbnails */
+      .release-card-body {
+        display: flex;
+        gap: 1.25rem;
+        align-items: flex-start;
+      }
 
+      .release-thumb-link {
+        flex-shrink: 0;
+        display: block;
+        text-decoration: none;
+      }
+      .release-thumb {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 4px;
+        border: 1px solid var(--border-color);
+        background-color: #000;
+        transition:
+          transform 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .release-thumb-link:hover .release-thumb {
+        transform: scale(1.03);
+        border-color: var(--accent-color);
+      }
+
+      .release-content {
+        flex-grow: 1;
+      }
+
+      .release-title-link {
+        color: var(--accent-color);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .release-title-link:hover {
+        color: #ffffff;
+        text-decoration: underline;
+      }
+
+      /* Mobile Responsiveness: Stack thumbnail above on narrow screens */
+      @media (max-width: 560px) {
+        .release-card-body {
+          flex-direction: column;
+          align-items: center;
+        }
+        .release-thumb {
+          width: 140px;
+          height: 140px;
+        }
+      }
       .release-header {
         display: flex;
         justify-content: space-between;
@@ -314,7 +368,7 @@
         </nav>
       </header>
 
-      <!-- Main Dossier Heading -->
+      <!-- Main Heading -->
       <main>
         <section class="dossier-intro">
           <div class="brand-banner">
@@ -329,24 +383,26 @@
             England's Finest Metamodernist Industrial Band
           </p>
           <p class="lead-text">
-            Characterised by a genre-blurring variety of styles and approaches
-            viewed through their singularly unique industrial lens, navigating
-            the tension between existential confrontation and an enduring core
-            of hope.
+            Centered around the core creative relationship between vocalist Del
+            Alien and musician Max Rael, History Of Guns are known for their
+            original genre-blurring variety of styles and approaches viewed
+            through their singularly unique and authentic industrial lens,
+            navigating the tension between existential horror and an enduring
+            core of hope.
           </p>
         </section>
 
         <!-- Artifact Filter Bar -->
         <nav class="artifact-filters">
-          <a href="#discography">Core Releases</a>
-          <a href="#dossier">Dossier</a>
+          <a href="#discography">Core Six Original Albums</a>
+          <a href="#dossier">Philosophy & World-Building</a>
           <a href="#media">Media</a>
           <a href="#archives">External Links</a>
         </nav>
 
         <!-- Studio Releases Section -->
         <section id="discography" class="section-block">
-          <h2>Core Releases</h2>
+          <h2>Core Six Original Albums</h2>
           <div class="release-list">
             <article class="release-card">
               <div class="release-header">
@@ -355,9 +411,11 @@
               </div>
               <div class="release-meta">Liquid Len Recording Company</div>
               <p class="release-desc">
-                Coming full circle, released on the summer solstice, June 20,
-                2024, a thematic and sonic sequel to their 2004 debut album,
-                Flashes of Light.
+                Coming full circle, an electronic album, a thematic and sonic
+                sequel to their 2004 debut album, Flashes of Light. Originally
+                planned as the follow-up to 2008's Acedia it was resurrected,
+                reworked and released on the summer solstice, June 20, 2024.
+                Introducing Caden Clarkson on guitar.
               </p>
               <div class="quote-block">
                 "...a collection of songs that sit on the interface between
@@ -376,20 +434,27 @@
               </div>
               <div class="release-meta">Liquid Len Recording Company</div>
               <p class="release-desc">
-                The return after a decade hiatus. Polished, dramatic production
-                exploring existential confrontation, recovery, and persistence.
+                The return after a decade hiatus. A guitar-based collaboration
+                with guitarist Jamu bringing a metal sensibility.
               </p>
             </article>
 
             <article class="release-card">
               <div class="release-header">
-                <span class="release-title">Album 4</span>
+                <span class="release-title"
+                  >Album 4: Whatever You Do, Don't Turn Up At Twelve</span
+                >
                 <span class="release-year">2012</span>
               </div>
               <div class="release-meta">Independent</div>
               <p class="release-desc">
-                A polarizing document of disintegration; raw, abrasive, and
-                honest.
+                A polarising album of disintegration. Raw, abrasive, and honest,
+                consuming and integrating additional styles and genres into the
+                melting pot. Includes the glam-goth-disco of "Friday Night,
+                After Work", alongside the high energy punk of the live band
+                sound on "Kicking Down the Doors" and "Who Controls You?", and a
+                return to the Flashes of Light style of an episodic journey
+                piece in "Departure, Journey, Arrival"
               </p>
             </article>
 
