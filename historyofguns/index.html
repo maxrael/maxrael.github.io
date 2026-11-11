@@ -3,368 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>History Of Guns — Official Homepage | Max Rael</title>
-    <style>
-      :root {
-        --bg-color: #0c0d0e;
-        --panel-bg: #141618;
-        --text-color: #d1d5db;
-        --accent-color: #e5e7eb;
-        --subtle-text: #6b7280;
-        --border-color: #27272a;
-        --highlight: #a1a1aa;
-      }
-
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      body {
-        background-color: var(--bg-color);
-        color: var(--text-color);
-        font-family:
-          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          "Helvetica Neue", Arial, sans-serif;
-        line-height: 1.6;
-        padding: 2.5rem 1.5rem;
-        display: flex;
-        justify-content: center;
-      }
-
-      .container {
-        max-width: 820px;
-        width: 100%;
-      }
-
-      /* Responsive Logo Banner */
-      .brand-banner {
-        width: 100%;
-        margin-bottom: 1.5rem;
-        text-align: left;
-      }
-
-      .responsive-logo {
-        max-width: 100%; /* Never exceeds the screen width */
-        width: 420px; /* Sets a balanced max display size on desktop */
-        height: auto; /* Preserves original aspect ratio perfectly */
-        display: block;
-        margin: 0;
-      }
-
-      /* Accessible hidden header */
-      .visually-hidden {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        border: 0;
-      }
-
-      /* Top Brand Navigation */
-      .site-header {
-        border-bottom: 1px solid var(--border-color);
-        padding-bottom: 1.5rem;
-        margin-bottom: 2.5rem;
-      }
-
-      .site-title {
-        font-size: 0.9rem;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--subtle-text);
-        margin-bottom: 1rem;
-      }
-
-      .site-title a {
-        color: var(--subtle-text);
-        text-decoration: none;
-        transition: color 0.2s ease;
-      }
-
-      .site-title a:hover {
-        color: var(--accent-color);
-      }
-
-      /* Primary Matrix Navigation */
-      .matrix-nav {
-        display: flex;
-        gap: 1.5rem;
-        flex-wrap: wrap;
-        font-size: 0.95rem;
-        letter-spacing: 0.05em;
-      }
-
-      .matrix-nav a {
-        color: var(--subtle-text);
-        text-decoration: none;
-        padding-bottom: 0.25rem;
-        border-bottom: 2px solid transparent;
-        transition: all 0.2s ease;
-      }
-
-      .matrix-nav a:hover {
-        color: var(--accent-color);
-      }
-
-      .matrix-nav a.active {
-        color: var(--accent-color);
-        border-bottom-color: var(--accent-color);
-        font-weight: 500;
-      }
-
-      /* Section Header */
-      .dossier-intro {
-        margin-bottom: 3rem;
-      }
-
-      h1 {
-        font-size: 2rem;
-        font-weight: 600;
-        letter-spacing: 0.02em;
-        color: var(--accent-color);
-        margin-bottom: 0.75rem;
-      }
-
-      .dossier-subtitle {
-        font-size: 1.05rem;
-        color: var(--highlight);
-        margin-bottom: 1.25rem;
-      }
-
-      .lead-text {
-        color: var(--text-color);
-        font-size: 0.95rem;
-        border-left: 2px solid var(--border-color);
-        padding-left: 1rem;
-        margin-top: 1rem;
-      }
-
-      /* Sub-navigation Filters */
-      .artifact-filters {
-        display: flex;
-        gap: 1rem;
-        margin: 2rem 0;
-        padding: 0.75rem 0;
-        border-top: 1px solid var(--border-color);
-        border-bottom: 1px solid var(--border-color);
-        font-size: 0.85rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .artifact-filters a {
-        color: var(--subtle-text);
-        text-decoration: none;
-        transition: color 0.2s ease;
-      }
-
-      .artifact-filters a:hover {
-        color: var(--accent-color);
-      }
-
-      /* Section Block */
-      .section-block {
-        margin-bottom: 3.5rem;
-      }
-
-      h2 {
-        font-size: 1.25rem;
-        font-weight: 500;
-        letter-spacing: 0.05em;
-        color: var(--accent-color);
-        text-transform: uppercase;
-        margin-bottom: 1.5rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      /* Catalog / Discography Grid */
-      .release-list {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1.25rem;
-      }
-
-      .release-card {
-        background-color: var(--panel-bg);
-        border: 1px solid var(--border-color);
-        padding: 1.25rem;
-        border-radius: 4px;
-      }
-      /* Release Card Layout with Thumbnails */
-      .release-card-body {
-        display: flex;
-        gap: 1.25rem;
-        align-items: flex-start;
-      }
-
-      .release-thumb-link {
-        flex-shrink: 0;
-        display: block;
-        text-decoration: none;
-      }
-      .release-thumb {
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-        border-radius: 4px;
-        border: 1px solid var(--border-color);
-        background-color: #000;
-        transition:
-          transform 0.2s ease,
-          border-color 0.2s ease;
-      }
-
-      .release-thumb-link:hover .release-thumb {
-        transform: scale(1.03);
-        border-color: var(--accent-color);
-      }
-
-      .release-content {
-        flex-grow: 1;
-      }
-
-      .release-title-link {
-        color: var(--accent-color);
-        text-decoration: none;
-        transition: color 0.2s ease;
-      }
-
-      .release-title-link:hover {
-        color: #ffffff;
-        text-decoration: underline;
-      }
-
-      /* Mobile Responsiveness: Stack thumbnail above on narrow screens */
-      @media (max-width: 560px) {
-        .release-card-body {
-          flex-direction: column;
-          align-items: center;
-        }
-        .release-thumb {
-          width: 140px;
-          height: 140px;
-        }
-      }
-      .release-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        margin-bottom: 0.5rem;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-      }
-
-      .release-title {
-        font-size: 1.05rem;
-        font-weight: 600;
-        color: var(--accent-color);
-      }
-
-      .release-year {
-        font-size: 0.85rem;
-        color: var(--subtle-text);
-        font-family: monospace;
-      }
-
-      .release-meta {
-        font-size: 0.85rem;
-        color: var(--subtle-text);
-        margin-bottom: 0.75rem;
-      }
-
-      .release-desc {
-        font-size: 0.9rem;
-        color: var(--text-color);
-      }
-
-      .quote-block {
-        margin-top: 0.75rem;
-        font-size: 0.85rem;
-        font-style: italic;
-        color: var(--subtle-text);
-        border-left: 2px solid #3f3f46;
-        padding-left: 0.75rem;
-      }
-
-      /* Footer */
-      footer {
-        margin-top: 4rem;
-        padding-top: 1.5rem;
-        border-top: 1px solid var(--border-color);
-        font-size: 0.8rem;
-        color: var(--subtle-text);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 1rem;
-      }
-
-      footer a {
-        color: var(--subtle-text);
-        text-decoration: none;
-      }
-
-      footer a:hover {
-        color: var(--accent-color);
-      }
-      /* Media Image Grid */
-      .image-gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 1rem;
-        margin-top: 1.25rem;
-      }
-
-      .gallery-item {
-        background: #000;
-        border: 1px solid var(--border-color);
-        border-radius: 4px;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-      }
-
-      .gallery-item img {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-        filter: grayscale(100%) contrast(115%);
-        transition:
-          filter 0.3s ease,
-          transform 0.3s ease;
-      }
-
-      .gallery-item:hover img {
-        filter: grayscale(40%) contrast(110%);
-        transform: scale(1.02);
-      }
-
-      .gallery-caption {
-        padding: 0.6rem 0.8rem;
-        font-size: 0.8rem;
-        color: var(--subtle-text);
-        border-top: 1px solid var(--border-color);
-        background: var(--panel-bg);
-      }
-    </style>
+    <title>History Of Guns — Official Homepage</title>
+    <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
     <div class="container">
       <!-- Site Header & Master Navigation -->
       <header class="site-header">
-        <div class="site-title"><a href="/">Max Rael Archive</a></div>
+        <div class="site-title"><a href="../index.html">Max Rael Archive</a></div>
         <nav class="matrix-nav">
-          <a href="/historyofguns/" class="active">History Of Guns</a>
-          <a href="/maxrael/">Max Rael</a>
-          <a href="/decommissionedforests/">Decommissioned Forests</a>
+          <a href="index.html" class="active">History Of Guns</a>
+          <a href="../maxrael/index.html">Max Rael</a>
+          <a href="#" class="placeholder" title="In development">Decommissioned Forests</a>
         </nav>
       </header>
 
@@ -390,13 +40,21 @@
             navigating the tension between existential horror and an enduring
             core of hope.
           </p>
-        </section>
+          <div class="quote-block">
+              "By far, the most inventive UK band to have got their hands caught
+              in the industrial threshing machine." - Mick Mercer
+            </div>
+            <div class="quote-block">
+            "Dirty and raw with a mix of clever electronics and sounds... and horrible, nasty punk filth." - Raw Nerve
+            </div> 
+          </section>
 
         <!-- Artifact Filter Bar -->
         <nav class="artifact-filters">
           <a href="#discography">Core Six Original Albums</a>
           <a href="#dossier">Philosophy & World-Building</a>
           <a href="#media">Media</a>
+          <a href="discog.html">Complete Discography</a>
           <a href="#archives">External Links</a>
         </nav>
 
@@ -405,11 +63,21 @@
           <h2>Core Six Original Albums</h2>
           <div class="release-list">
             <article class="release-card">
+          <div class="release-card-body">
+            <!-- Clickable Album Cover Thumbnail -->
+            <a href="album-half-light.html" class="release-thumb-link" title="Explore Half Light (2024)">
+              <img src="images/half_light_thumb.jpg" alt="Half Light album cover" class="release-thumb">
+            </a>
+
+            <!-- Release Details & Clickable Title -->
+            <div class="release-content">
               <div class="release-header">
-                <span class="release-title">Half Light</span>
+                <span class="release-title">
+                    <a href="album-half-light.html" class="release-title-link">Half Light</a>
+                </span>
                 <span class="release-year">2024</span>
               </div>
-              <div class="release-meta">Liquid Len Recording Company</div>
+              <div class="release-meta">The Liquid Len Recording Company</div>
               <p class="release-desc">
                 Coming full circle, an electronic album, a thematic and sonic
                 sequel to their 2004 debut album, Flashes of Light. Originally
@@ -423,86 +91,156 @@
                 electronica, between the past and the future, the what was and
                 the what might yet be... ...it is an album full of digital tones
                 and analogue textures, smooth ambient electro-scapes, and
-                clubland grooves." — The Big Takeover
+                clubland grooves." - The Big Takeover
               </div>
             </article>
 
             <article class="release-card">
-              <div class="release-header">
-                <span class="release-title">Forever Dying In Your Eyes</span>
-                <span class="release-year">2022</span>
+              <!-- 1. START THE FLEXWRAPPER HERE -->
+              <div class="release-card-body">
+                <!-- Thumbnail Link -->
+                <a href="album-forever.html" class="release-thumb-link" title="Explore Forever Dying In Your Eyes (2022)">
+                  <img src="images/forever_dying_thumb.jpg" alt="Forever Dying In Your Eyes album cover" class="release-thumb">
+                </a>
+                <!-- 2. WRAP ALL TEXT ELEMENTS IN RELEASE-CONTENT -->
+                <div class="release-content">
+                  <div class="release-header">
+                    <span class="release-title">Forever Dying In Your Eyes</span>
+                    <span class="release-year">2022</span>
+                  </div>
+
+                  <div class="release-meta">The Liquid Len Recording Company</div>
+                    <p class="release-desc">
+                      The return after a decade hiatus. A guitar-based collaboration
+                      with guitarist Jamu bringing a metal sensibility to the melting pot.
+                    </p>
+                  <div class="quote-block">
+                    “invisible hooks [that] will sink further in” - Auxiliary Magazine (US) 
+                    <br>“an album that is polished, dramatic, full of poise and binding sentiment, and one of awesome sound and feeling.” - Liverpool Sound and Vision (UK)
+                  </div>
+                </div>
               </div>
-              <div class="release-meta">Liquid Len Recording Company</div>
-              <p class="release-desc">
-                The return after a decade hiatus. A guitar-based collaboration
-                with guitarist Jamu bringing a metal sensibility.
-              </p>
             </article>
 
             <article class="release-card">
-              <div class="release-header">
-                <span class="release-title"
-                  >Album 4: Whatever You Do, Don't Turn Up At Twelve</span
+              <!-- 1. START THE FLEXWRAPPER HERE -->
+              <div class="release-card-body">
+                <!-- Thumbnail Link -->
+                <a href="album-album4.html" class="release-thumb-link" title="Explore Album 4 (2012)">
+                  <img src="images/album4_thumb.jpg" alt="Album 4 album cover" class="release-thumb">
+                </a>
+                <!-- 2. WRAP ALL TEXT ELEMENTS IN RELEASE-CONTENT -->
+                <div class="release-content">
+                  <div class="release-header">
+                    <span class="release-title"><a href="album-album4.html" class="release-title-link">Album 4: Whatever You Do, Don't Turn Up At Twelve</a></span
                 >
-                <span class="release-year">2012</span>
-              </div>
-              <div class="release-meta">Independent</div>
-              <p class="release-desc">
-                A polarising album of disintegration. Raw, abrasive, and honest,
-                consuming and integrating additional styles and genres into the
-                melting pot. Includes the glam-goth-disco of "Friday Night,
-                After Work", alongside the high energy punk of the live band
-                sound on "Kicking Down the Doors" and "Who Controls You?", and a
-                return to the Flashes of Light style of an episodic journey
-                piece in "Departure, Journey, Arrival"
-              </p>
+                    <span class="release-year">2012</span>
+                  </div>
+                  <div class="release-meta">Line Out Records</div>
+                  <p class="release-desc">
+                     A polarising album of disintegration. Raw, abrasive, and honest,
+                    consuming and integrating additional styles and genres into the
+                    evolving sound design. Includes the glam-goth-disco of "Friday Night,
+                    After Work", alongside the high energy punk of their live band
+                    sound on "Kicking Down the Doors" and "Who Controls You?", plus a
+                    return visit to the Flashes of Light structural style with the episodic 
+                    journey piece "Departure, Journey, Arrival"
+                  </p>
+                  <div class="quote-block">
+                    "History Of Guns are classed as a cross genre band and I don’t think I’ve ever 
+                     read a truer description of a band before... This album is difficult to stop listening 
+                     to as it’s that damn bizarre... the ideas that are placed into every track are surreal. 
+                     To go from some of the heaviest riffs you can imagine to soothing piano parts shows how talented 
+                     yet wacky History of Guns are." - The Big Takeover                   
+                  </div>
+                </div>
+              </div> 
             </article>
 
             <article class="release-card">
-              <div class="release-header">
-                <span class="release-title">ACEDIA</span>
-                <span class="release-year">2008</span>
-              </div>
-              <div class="release-meta">Line Out Records</div>
-              <p class="release-desc">
-                Mid-tempo industrial malaise and existential dread. Mark of the
-                label transition.
-              </p>
-              <div class="quote-block">
+              <!-- 1. START THE FLEXWRAPPER HERE -->
+              <div class="release-card-body">
+                <!-- Clickable Album Cover Thumbnail -->
+                <a href="album-acedia.html" class="release-thumb-link" title="Explore Acedia (2008)">
+                  <img src="images/acedia_thumb.jpg" alt="Acedia album cover" class="release-thumb">
+                </a>
+                <!-- Release Details & Clickable Title -->
+                <div class="release-content">
+                 <div class="release-header">
+                  <span class="release-title"><a href="album-acedia.html" class="release-title-link">ACEDIA</a></span>
+                  <span class="release-year">2008</span>
+                 </div>
+                <div class="release-meta">Line Out Records</div>
+                <p class="release-desc">
+                History Of Guns' focus on guitar-based songs led to one of their most cohesive and acclaimed albums to date. 
+                On release it was awarded 9/10 in Rock Sound Magazine. 
+                </p>
+                <div class="quote-block">
                 "A brooding masterpiece of mid-tempo industrial malaise...
-                captures a specific kind of English existential dread." —
-                Terrorizer
+                captures a specific kind of English existential dread." - Terrorizer
+                </div>
+                <div class="quote-block">
+                "Del Alien sings (and, I suspect, writes most of the words) but it is Max Rael who controls the music (being writer, player and producer). His world of sonic construction and manipulation is, at times, astonishingly open - and yet moments of dense and confrontational music appear all through Acedia. It is as if he has taken a pair of scissors and snipped up rock from the inside out; there are even moments where History Of Guns almost transcend their ultra-depressive aesthetic and aspire to reach Jesu-like realms of soaringly glorious redemption." - The Dreaded Press
+              </div>
+              </div>
               </div>
             </article>
 
             <article class="release-card">
-              <div class="release-header">
-                <span class="release-title">Apophenia</span>
-                <span class="release-year">2006</span>
+              <div class="release-card-body">
+              <!-- Clickable Album Cover Thumbnail -->
+              <a href="album-apophenia.html" class="release-thumb-link" title="Explore Half Light (2024)">
+               <img src="images/half_light_thumb.jpg" alt="Half Light album cover" class="release-thumb">
+              </a>
+              <!-- 2. WRAP ALL TEXT ELEMENTS IN RELEASE-CONTENT -->
+              <div class="release-content">
+                <div class="release-header">
+                 <span class="release-title"><a href="album-apophenia.html" class="release-title-link">Apophenia</a></span>
+                 <span class="release-year">2006</span>
+                </div>
+                <div class="release-meta">The Liquid Len Recording Company</div>
+                  <p class="release-desc">
+                    The chaotic second album. Includes the defining anthem, "Your Obedient
+                     Servants".
+                  </p>
+                
+                <div class="quote-block">
+                 "there is no-one in the UK capable of unleashing a high pedigree sonic firestorm like the HOG boys." - Mick Mercer 
               </div>
-              <div class="release-meta">Independent / Line Out Records</div>
-              <p class="release-desc">
-                Genre fragmentation featuring the defining anthem "Your Obedient
-                Servants".
-              </p>
+                              <div class="quote-block">
+            "The truth is, History of Guns has a far superior production sound than almost any self-produced industrial goth rock band out there. They don't really match up with those bands though as they even manage to avoid categorization in that side of the electronic field. They stand on their own for the most part, a genre to themselves. Or rather they perhaps are a combination of every genre you could think of... Certainly inventive, but more profound in their ability to mix and match genres effortlessly. It doesn't seem like they're trying, or having to force any music out of their systems. It all flows incredibly well." - Heathen Harvest
+            </div>
+            </div>
+                </div>
             </article>
 
             <article class="release-card">
-              <div class="release-header">
-                <span class="release-title">Flashes of Light</span>
+             <div class="release-card-body">
+              <!-- Clickable Album Cover Thumbnail -->
+              <a href="album-flashes.html" class="release-thumb-link" title="Explore Flashes of Light (2004)">
+               <img src="images/flashes_thumb.jpg" alt="Flashes of Light album cover" class="release-thumb">
+              </a>
+
+              <!-- Release Details & Clickable Title -->
+              <div class="release-content">  
+               <div class="release-header">
+                <span class="release-title"><a href="album-flashes.html" class="release-title-link">Flashes of Light</a></span>
                 <span class="release-year">2004</span>
-              </div>
-              <div class="release-meta">The Liquid Lens Recording Company</div>
-              <p class="release-desc">
-                The noir-industrial debut LP defining the early UK Wasp Factory
-                and FuturePunk era.
-              </p>
+               </div>
+               <div class="release-meta">The Liquid Len Recording Company</div>
+                <p class="release-desc">
+                 The classic noir-industrial electronic-soundscape debut album.
+                </p>
+               
+               <div class="quote-block">"Truly strange. One of the most interesting explorations of the dark side of electronic Goth I have ever heard - the only one actually! Sublime electronics, scary vocals... There are moments on this album that make the blood run cold. I had been struggling to describe it until I played it very loud in the car coming home from work on Friday. Over the hour of listening, the sky darkened, the rain fell and it all made sense." - Cool Noise</div>
+               <div class="quote-block">"Well, before I go on, I want you to be up to speed with the HOG sound – it's like nothing else that's out there right now. It's not electronic, it's not traditional Goth, and it's not Industrial. But what we have here, is a mixture and fusion of all these styles, and with a bit of Punk thrown in too, not to mention some heartfelt depression. 'Post Industrial Goth' is the label that best sums it up!" - Hard Wired</div>
+             </div>
             </article>
           </div>
         </section>
         <!-- Dossier: History, Narratives, Critical Lore -->
         <section id="dossier" class="section-block">
-          <h2>The Dossier & World-Building</h2>
+          <h2>Philosophy & World-Building</h2>
 
           <!-- 1. Biography & Critical Reception -->
           <article class="release-card" style="margin-bottom: 1.5rem">
@@ -516,20 +254,15 @@
               Origins & Metamodern Evolution
             </h3>
             <p class="release-desc">
-              History Of Guns emerged in Hertfordshire in 1996 when Max Rael and
-              Del Alien began improvising late-night studio sessions in the
-              dark. Becoming frontrunners of the UK Wasp Factory and FuturePunk
-              underground throughout the 2000s, the project has spanned formats
+              History Of Guns emerged in Hertfordshire in 1996 when founding memebers 
+              Max Rael, Del Alien and Stagger Lee began improvising late-night studio 
+              sessions in the dark. Becoming frontrunners of the UK underground Futurepunk
+              Industrial scene throughout the 2000s, the project has spanned formats
               from raw duo electronica to a full 5-piece rock ensemble.
             </p>
-            <div class="quote-block">
-              "By far, the most inventive UK band to have got their hands caught
-              in the industrial threshing machine." — Mick Mercer
-            </div>
+            
             <div class="quote-block" style="margin-top: 0.5rem">
-              "Exude a strong whiff of authenticity – a glowering psychosis that
-              no amount of Hot Topic eyeshadow can imitate." — Rock-Metal-Music
-              Reviews
+              "History Of Guns know how to blast your skull inside out whilst still leaving you enough brain cells to remember how great the experience was. Proof that classic tracks come not by pushing the right buttons, but determination and a lot of heart." — Vision Thing
             </div>
           </article>
 
@@ -542,7 +275,7 @@
                 margin-bottom: 0.5rem;
               "
             >
-              The Half Light Lore: Starship Pickton Lock
+              Half Light Lore: Starship Pickton Lock
             </h3>
             <p class="release-desc">
               The conceptual narrative of <em>Half Light</em> (2024) revolves
@@ -565,7 +298,7 @@
                 margin-bottom: 0.5rem;
               "
             >
-              The Lore of Drug Castle
+              Drug Castle Lore
             </h3>
             <p class="release-desc">
               An insinuated reality explored across flash fiction, prose, and
@@ -634,7 +367,7 @@
               </li>
               <li>
                 <a
-                  href="https://www.youtube.com/@historyofguns"
+                  href="https://www.youtube.com/watch?v=WPaXtI0cIKg&list=PLx2bWRaDH5pyqkpFkQ772BtD4XsXRK-3u&pp=8AUB0gcJCW4DOCosWNinsAgC"
                   target="_blank"
                   style="color: var(--accent-color)"
                   >YouTube Official Video Channel ↗</a
@@ -647,8 +380,8 @@
 
       <!-- Footer -->
       <footer>
-        <span>&copy; Max Rael. Primary digital archive.</span>
-        <span><a href="/">← Return to Main Index</a></span>
+        <span>&copy; Max Rael. Digital archive. Handcrafted in HTML.</span>
+        <span><a href="../index.html">← Return to Main Index</a></span>
       </footer>
     </div>
   </body>
